@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'app-chrisobs-test-eus-erdhus'
           slot-name: 'staging'
-          package: '*.war'
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F19CA1F342A6473189D35D70F8E2A035 }}
