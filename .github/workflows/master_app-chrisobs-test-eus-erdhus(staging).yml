@@ -24,6 +24,10 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
+      - name: Rename the war file to app.war
+        run: |
+          mv '${{ github.workspace }}/target/*.war' '${{ github.workspace }}/target/app.war'
+ 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
@@ -49,5 +53,5 @@ jobs:
         with:
           app-name: 'app-chrisobs-test-eus-erdhus'
           slot-name: 'staging'
-          package: .
+          package: '*.war'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F19CA1F342A6473189D35D70F8E2A035 }}
