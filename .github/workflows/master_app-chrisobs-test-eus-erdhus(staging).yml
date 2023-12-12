@@ -26,7 +26,7 @@ jobs:
 
       - name: Rename the war file to app.war
         run: |
-          mv '${{ github.workspace }}/target/*.war' '${{ github.workspace }}/target/app.war'
+          mv '${{ github.workspace }}/target/onlinebookstore.war' '${{ github.workspace }}/target/app.war'
  
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
